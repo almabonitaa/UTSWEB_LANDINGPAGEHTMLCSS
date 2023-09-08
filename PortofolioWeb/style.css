@@ -1,0 +1,526 @@
+/* Code dibawah ini berfungsi untuk font yang digunakan pada tampilan */
+@import url("https://fonts.googleapis.com/css2?family=Roboto:wght@400;500;700&display=swap");
+
+/* code dibawah ini untuk menampilkan warna yang digunakan pada tampilan landing page */
+:root {
+  --primary-color: #28bf96;
+  --primary-color-dark: #209677;
+  --text-dark: #111827;
+  --text-light: #6b7280;
+  --white-font: #fff;
+  --h1-font: 6rem;
+  --h2-font: 3rem;
+  --p-font: 1rem;
+}
+
+* {
+  padding: 0;
+  margin: 0;
+  box-sizing: border-box;
+}
+section {
+  padding: 70px 11% 60px;
+}
+.btn {
+  display: inline-block;
+  padding: 1rem 2rem;
+  outline: none;
+  border: none;
+  font-size: 1rem;
+  color: var(--white);
+  background-color: var(--primary-color);
+  border-radius: 5px;
+  cursor: pointer;
+  margin-top: 10px;
+  transition: 0, 3s;
+}
+
+.btn:hover {
+  background-color: var(--primary-color-dark);
+}
+
+body {
+  font-family: "Roboto", sans-serif;
+}
+
+/* Kode CSS ini mengatur elemen dengan class "container" untuk memiliki lebar maksimum 1200 piksel, terletak di tengah horizontal layar, memiliki tinggi minimum setidaknya seluruh tinggi layar, menggunakan tata letak fleksibel, dan mengatur elemen-elemen di dalamnya secara vertikal sebagai kolom. */
+.container {
+  max-width: 1200px;
+  margin: auto;
+  min-height: 100vh;
+  display: flex;
+  flex-direction: column;
+}
+
+nav {
+  padding: 2rem 1rem;
+  display: flex;
+  align-items: center;
+  justify-content: space-between;
+  gap: 1rem;
+}
+
+.nav__logo {
+  font-size: 1.5rem;
+  font-weight: 600;
+  color: var(--primary-color);
+}
+
+.nav__links {
+  list-style: none;
+  display: flex;
+  align-items: center;
+  gap: 2rem;
+}
+
+/* Kode CSS ini menghapus garis bawah pada tautan, mengatur warna teks tautan dengan variabel "--text-light," dan mengubah kursor mouse menjadi tangan saat mengarahkan ke tautan, serta memberikan efek peralihan yang halus saat ada perubahan tampilan tautan. */
+.link a {
+  text-decoration: none;
+  color: var(--text-light);
+  cursor: pointer;
+  transition: 0.3s;
+}
+
+.link a:hover {
+  color: var(--primary-color);
+}
+
+.header {
+  padding: 0 1rem;
+  flex: 1;
+  display: grid;
+  grid-template-columns: repeat(2, 1fr);
+  gap: 2rem;
+  align-items: center;
+}
+
+/* Kode CSS ini mengatur gaya tampilan teks judul (h1) yang berada dalam elemen dengan class "content," termasuk margin bawah, ukuran font, ketebalan font, dan warna teks. */
+.content h1 {
+  margin-bottom: 1rem;
+  font-size: 3rem;
+  font-weight: 700;
+  color: var(--text-dark);
+}
+
+.content h1 span {
+  font-weight: 400;
+}
+
+.content p {
+  margin-bottom: 2rem;
+  color: var(--text-light);
+  line-height: 1.75rem;
+}
+
+/* Kode CSS ini mengatur tampilan elemen gambar dengan latar belakang lingkaran dan konten teks yang terletak di atasnya, dengan beberapa gaya tampilan berbeda untuk dua bagian konten yang berbeda pada gambar tersebut. */
+.image {
+  position: relative;
+  text-align: center;
+  isolation: isolate;
+}
+
+.image__bg {
+  position: absolute;
+  top: 50%;
+  left: 50%;
+  transform: translate(-50%, -50%);
+  height: 450px;
+  width: 450px;
+  background-color: var(--primary-color);
+  border-radius: 100%;
+  z-index: -1;
+}
+
+.image img {
+  width: 100%;
+  max-width: 475px;
+}
+
+.image__content {
+  position: absolute;
+  top: 50%;
+  left: 50%;
+  padding: 1rem 2rem;
+  display: flex;
+  align-items: center;
+  gap: 1rem;
+  text-align: left;
+  background-color: var(--white);
+  border-radius: 5px;
+  box-shadow: 5px 5px 20px rgba(0, 0, 0, 0.2);
+}
+
+.image__content__1 {
+  transform: translate(calc(-50% - 12rem), calc(-50% - 8rem));
+}
+
+.image__content__1 span {
+  padding: 10px 12px;
+  font-size: 1.5rem;
+  color: var(--primary-color);
+  background-color: #defcf4;
+  border-radius: 100%;
+}
+
+.image__content__1 h4 {
+  font-size: 1.5rem;
+  font-weight: 600;
+  color: var(--text-dark);
+}
+
+.image__content__1 p {
+  color: var(--text-light);
+}
+
+.image__content__2 {
+  transform: translate(calc(-50% + 8rem), calc(-50% + 10rem));
+}
+
+.image__content__2 ul {
+  list-style: none;
+  display: grid;
+  gap: 1rem;
+}
+
+.image__content__2 li {
+  display: flex;
+  align-items: flex-start;
+  gap: 0.5rem;
+  color: var(--text-light);
+}
+
+.image__content__2 span {
+  font-size: 1.5rem;
+  color: var(--primary-color);
+}
+
+/* Kode ini menggunakan media query untuk mengubah tampilan halaman web saat lebar layar kurang dari 900 piksel, termasuk menyembunyikan tautan navigasi, mengatur padding dan tata letak kolom pada header, serta mengatur tampilan konten dan posisi gambar pada grid. */
+@media (width < 900px) {
+  .nav__links {
+    display: none;
+  }
+  .header {
+    padding: 1rem;
+    grid-template-columns: repeat(1, 1fr);
+  }
+  .content {
+    text-align: center;
+  }
+
+  .image {
+    grid-area: 1/1/2/2;
+  }
+}
+
+.feature-content {
+  padding-top: 50px;
+  display: grid;
+  grid-template-columns: repeat(auto-fit, minmax(150px, auto));
+  align-items: center;
+  text-align: center;
+  gap: 3rem;
+}
+.row-img {
+  overflow: hidden;
+  width: 100px;
+  height: 100px;
+  margin: 0 auto;
+  margin-bottom: 20px;
+  border-radius: 50%;
+  cursor: pointer;
+}
+.row-img img {
+  width: 100%;
+  display: block;
+  transition: transform 0.7s;
+}
+
+.row-img img:hover {
+  transform: scale(1.2);
+}
+
+.feature-content h4 {
+  margin-top: 20px;
+  font-size: 17px;
+  font-weight: 500;
+  cursor: pointer;
+  transition: all 0.5s ease;
+}
+
+.feature-content h4:hover {
+  color: var(--main-color);
+}
+
+.health {
+  margin-top: 40px;
+  display: grid;
+  grid-template-columns: repeat(2, 1fr);
+  align-items: center;
+  gap: 9rem;
+  margin-right: 200px;
+  margin-bottom: 50px;
+}
+
+.health-img img {
+  margin-left: 100px;
+  margin-top: 50px;
+  width: 100%;
+  height: auto;
+  border-radius: 40px;
+}
+
+.health-text h5 {
+  font-size: 22px;
+  font-weight: 600;
+  color: var(--main-color);
+  text-transform: uppercase;
+  letter-spacing: 6px;
+  margin-bottom: 20px;
+}
+
+.feature-content {
+  display: grid;
+  grid-template-columns: repeat(auto-fit, minmax(150px, auto));
+  align-items: center;
+  text-align: center;
+  gap: 3rem;
+}
+.row-img {
+  overflow: hidden;
+  width: 100px;
+  height: 100px;
+  margin: 0 auto;
+  margin-bottom: 20px;
+  border-radius: 50%;
+  cursor: pointer;
+}
+.row-img img {
+  width: 100%;
+  display: block;
+  transition: transform 0.7s;
+}
+
+.row-img img:hover {
+  transform: scale(1.2);
+}
+
+.feature-content h4 {
+  font-size: 17px;
+  font-weight: 500;
+  cursor: pointer;
+  transition: all 0.5s ease;
+}
+
+.feature-content h4:hover {
+  color: var(--main-color);
+}
+
+.holiday {
+  display: grid;
+  grid-template-columns: repeat(2, 1fr);
+  align-items: center;
+  gap: 9rem;
+}
+
+.holiday-img img {
+  width: 100%;
+  height: auto;
+  border-radius: 40px;
+}
+
+.holiday-text h5 {
+  font-size: 22px;
+  font-weight: 600;
+  color: var(--main-color);
+  text-transform: uppercase;
+  letter-spacing: 6px;
+  margin-bottom: 20px;
+}
+.holiday-text h2 {
+  font-size: var(--h2-font);
+  font-weight: 800;
+  line-height: 1.2;
+  margin-bottom: 25px;
+}
+.holiday-text p {
+  font-size: var(--p-font);
+  font-weight: 500;
+  line-height: 30px;
+  color: #ffffffab;
+  margin-bottom: 35px;
+}
+.center-text {
+  text-align: center;
+  margin-right: 20px;
+}
+.center-text h1 {
+  margin-top: 30px;
+  font-size: var(--h2-font);
+  font-weight: 800;
+}
+.tours-content {
+  display: grid;
+  grid-template-columns: repeat(auto-fit, minmax(250px, auto));
+  align-items: center;
+  gap: 3rem;
+  margin-top: 5rem;
+}
+.box {
+  position: relative;
+}
+.box img {
+  margin-left: 20px;
+  margin-bottom: 30px;
+  width: 70%;
+  height: 70%;
+  object-fit: cover;
+  border-radius: 10px;
+  filter: brightness(70%);
+  transition: all 0.3s cubic-bezier(0.499, 0.05, 0.55, 0.95);
+  will-change: filter;
+  display: block;
+}
+.box h6 {
+  position: absolute;
+  left: 25px;
+  bottom: 95px;
+  font-size: 18px;
+  font-weight: 500;
+  color: var(--white-font);
+}
+.box h4 {
+  position: absolute;
+  left: 25px;
+  bottom: 65px;
+  font-size: 18px;
+  font-weight: 700;
+  color: var(--white-font);
+}
+.box img:hover {
+  filter: brightness(90%) hue-rotate(50deg);
+  transform: scale(1.04);
+  cursor: pointer;
+}
+
+.center-btn {
+  text-align: center;
+  margin-top: 4rem;
+  margin-right: 30px;
+}
+
+.Culture {
+  display: grid;
+  grid-template-columns: repeat(2, 1fr);
+  align-items: center;
+  gap: 9rem;
+}
+
+.culture-img img {
+  width: 60%;
+  margin-left: 30px;
+  height: auto;
+  border-radius: 40px;
+}
+
+.culture-text h5 {
+  margin-left: 20px;
+  font-size: 22px;
+  font-weight: 600;
+  color: var(var);
+  text-transform: uppercase;
+  letter-spacing: 6px;
+  margin-bottom: 20px;
+}
+.culture-text h2 {
+  margin-left: 20px;
+  font-size: var(--h2-font);
+  font-weight: 800;
+  line-height: 1.2;
+  margin-bottom: 25px;
+}
+.culture-text p {
+  margin-left: 20px;
+  font-size: var(--p-font);
+  font-weight: 500;
+  line-height: 30px;
+  color: #000000ab;
+  margin-bottom: 35px;
+}
+.huji {
+  margin-left: 10px;
+}
+.newsletter-content {
+  display: grid;
+  grid-template-columns: repeat(2, 1fr);
+  align-items: center;
+  gap: 2rem;
+}
+.newsletter-text h2 {
+  font-size: var(--h2-font);
+  font-weight: 800;
+  margin-bottom: 15px;
+}
+.newsletter-text p {
+  font-size: var(--p-font);
+  font-weight: 500;
+  color: #000000ab;
+}
+.newsletter form {
+  display: grid;
+  grid-template-columns: 1fr 0.4fr;
+  gap: 1rem;
+}
+.newsletter-content form input:first-child {
+  padding: 15px;
+  background-color: #202020;
+  font-size: var(--p-font);
+  color: var(--text-color);
+  border-radius: 5px;
+}
+.footer {
+  display: grid;
+  grid-template-columns: repeat(auto-fit, minmax(250px, auto));
+  gap: 2rem;
+}
+.footer-box {
+  display: flex;
+  flex-direction: column;
+}
+.footer-box h3 {
+  font-size: 20px;
+  font-weight: 600;
+  margin-bottom: 15px;
+}
+.footer-box a {
+  color: #979797;
+  margin-bottom: 0.8rem;
+  transition: all 0.5s ease;
+}
+.footer-box a:hover {
+  transform: translateX(-5px);
+  color: var(--text-color);
+}
+.social a {
+  display: inline-flex;
+  align-items: center;
+  justify-content: center;
+  height: 45px;
+  width: 45px;
+  background-color: #202020;
+  color: var(--text-color);
+  font-size: 20px;
+  border-radius: 50%;
+  margin-right: 8px;
+  transition: transform 0.6s;
+}
+.social a:hover {
+  background-color: var(--main-color);
+  color: var(--bg-color);
+  transform: translateX(-4px);
+}
+.copyright p {
+  text-align: center;
+  padding: 20px;
+  color: #979797;
+  font-size: 15px;
+}
